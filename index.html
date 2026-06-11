@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivani Chepuri</title>
+<style>
+  :root {
+    --bg:     #0e0f11;
+    --text:   #d6d0c6;
+    --dim:    #6b6860;
+    --gold:   #d4aa62;
+    --link:   #d4aa62;
+    --rule:   #1c1d20;
+    --note:   #7bafd4;
+    --stack:  #7ec8a0;
+    --venue:  #b48edd;
+    --hi:     #f0ece4;
+    --num:    #3e3c38;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 620px;
+    margin: 72px auto;
+    padding: 0 20px 100px;
+  }
+
+  .name {
+    font-size: 21px;
+    font-weight: normal;
+    color: #f0ece4;
+    letter-spacing: -0.02em;
+    margin-bottom: 3px;
+  }
+
+  .tagline {
+    font-style: italic;
+    font-size: 12.5px;
+    color: var(--dim);
+    margin-bottom: 8px;
+  }
+
+  .philosophy {
+    font-style: italic;
+    font-size: 12px;
+    color: #4a6070;
+    margin-bottom: 24px;
+  }
+
+  .bio {
+    font-size: 12.5px;
+    color: #8a8278;
+    line-height: 1.8;
+    margin-bottom: 5px;
+  }
+
+  h2 {
+    margin: 42px 0 0;
+    font-size: 9.5px;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--rule);
+    margin-top: 7px;
+    margin-bottom: 10px;
+  }
+
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: items;
+  }
+
+  ol li {
+    counter-increment: items;
+    font-size: 12.5px;
+    padding: 3px 0;
+    color: var(--text);
+    line-height: 1.6;
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+
+  ol li::before {
+    content: counter(items, decimal-leading-zero);
+    font-family: 'Courier New', monospace;
+    font-size: 9.5px;
+    color: var(--num);
+    min-width: 22px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li {
+    font-size: 12.5px;
+    padding: 2.5px 0;
+    color: var(--text);
+    line-height: 1.55;
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+
+  ul li::before {
+    content: '\2013';
+    font-family: 'Courier New', monospace;
+    color: var(--num);
+    min-width: 22px;
+    flex-shrink: 0;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid #2e2a1e;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  a:hover { color: #f0c878; border-bottom-color: #f0c878; }
+
+  .note  { color: var(--note);  font-style: italic; font-size: 11.5px; }
+  .stack { color: var(--stack); font-family: 'Courier New', monospace; font-size: 10.5px; }
+  .venue { color: var(--venue); font-style: italic; font-size: 11.5px; }
+  .yr    { color: var(--num);   font-family: 'Courier New', monospace; font-size: 10px; }
+  .hi    { color: var(--hi);    font-weight: normal; }
+
+  details { margin-top: 6px; }
+
+  summary {
+    cursor: pointer;
+    list-style: none;
+    font-size: 11.5px;
+    color: var(--dim);
+    padding: 2px 0 2px 32px;
+    user-select: none;
+    font-family: 'Courier New', monospace;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '+ '; }
+  details[open] summary::before { content: '\2013 '; }
+  summary:hover { color: var(--gold); }
+
+  details ol {
+    padding-left: 32px;
+    margin-top: 4px;
+    border-left: 1px solid var(--rule);
+    padding-bottom: 4px;
+  }
+
+  .footer {
+    margin-top: 52px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    font-size: 11.5px;
+    color: var(--dim);
+  }
+
+  .footer a { color: var(--dim); border-bottom-color: transparent; }
+  .footer a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+  .sep { margin: 0 7px; color: #252320; }
+
+  @media (max-width: 480px) {
+    body { margin: 36px auto; }
+  }
+</style>
+</head>
+<body>
+
+<p class="name">Shivani Chepuri</p>
+<p class="tagline">Applied AI Engineer &amp; Researcher &mdash; Hyderabad, India</p>
+<p class="philosophy">The medium changes. The question doesn&rsquo;t.</p>
+
+<p class="bio">
+  MS by Research (10.0&thinsp;/&thinsp;10.0) from IIIT Hyderabad&rsquo;s Robotics Research Center.
+  Three-time Dean&rsquo;s List. I work across deep learning, reinforcement learning,
+  computer vision, and agentic AI &mdash; from UAV controllers to production LLM systems.
+</p>
+
+
+<!-- EXPERIENCE -->
+<h2>Experience</h2>
+<ol>
+  <li>
+    <span>
+      <span class="yr">2024&ndash;</span>
+      <span class="hi">Experian</span>
+      <span class="note"> &mdash; Software Engineer &amp; AI, Product.</span>
+      MCP-orchestrated agentic systems and RAG pipelines in a live financial product.
+      100K+ daily transactions at 99.99% uptime. $80K+ infra savings. 3&times; Spot Award.
+      <br><span class="stack">aws &middot; langgraph &middot; mcp &middot; rag &middot; docker &middot; ci/cd</span>
+    </span>
+  </li>
+  <li>
+    <span>
+      <span class="yr">2024&ensp;</span>
+      <span class="hi">Amazon</span>
+      <span class="note"> &mdash; Data Scientist Intern, FGBS.</span>
+      MLOps pipelines on SageMaker for YOLO + BERT. OCR-free LLM extraction at 98% accuracy.
+      Reference-free LLM evaluator without ground truth, 80%+ reliability.
+      <br><span class="stack">sagemaker &middot; yolo &middot; bert &middot; claude-3.5 &middot; llama-2</span>
+    </span>
+  </li>
+  <li>
+    <span>
+      <span class="yr">2021&ensp;</span>
+      <span class="hi">iHub-Data, IIIT-H</span>
+      <span class="note"> &mdash; CV &amp; ML Research Associate.</span>
+      99% accuracy extracting structural building attributes from live UAV feeds. Led to IEEE GRSL submission.
+      <br><span class="stack">lednet &middot; resnet &middot; opencv</span>
+    </span>
+  </li>
+  <li>
+    <span>
+      <span class="yr">2020&ensp;</span>
+      <span class="hi">Robotics Research Center, IIIT-H</span>
+      <span class="note"> &mdash; Research Assistant, 4 years.</span>
+      Deep RL, UAV simulation, sliding mode control, adaptive vector fields, model predictive PID.
+      <br><span class="stack">ros &middot; gazebo &middot; mujoco &middot; pytorch</span>
+    </span>
+  </li>
+</ol>
+
+
+<!-- RESEARCH -->
+<h2>Research</h2>
+<ol>
+  <li>
+    <span>
+      <a href="#" target="_blank">RL-based Response Shaping Control of Dynamical Systems</a>
+      <span class="note"> &mdash; S. Chepuri, H. Kandath.</span>
+      <span class="venue">IEEE ICCMA 2023, Norway. Published.</span>
+      TD3 policy gradients for fully unknown system dynamics; reward auto-tuning via multi-agent PSO.
+    </span>
+  </li>
+  <li>
+    <span>
+      Automated Detection and Counting of Windows via UAV Remote Sensing
+      <span class="note"> &mdash; D. Patel, S. Chepuri et al.</span>
+      <span class="venue">IEEE GRSL. Submitted 2022.</span>
+    </span>
+  </li>
+</ol>
+
+
+<!-- BUILT -->
+<h2>Built</h2>
+<ol>
+  <li>
+    <span>
+      <a href="https://github.com/" target="_blank">SkillSync</a>
+      <span class="stack">langgraph &middot; gemini &middot; streamlit</span>
+      <span class="note"> &mdash; multi-agent resume parser, skill gap detector, adaptive mock interviewer</span>
+    </span>
+  </li>
+  <li>
+    <span>
+      <a href="https://github.com/" target="_blank">3D Reconstruction &amp; SLAM Pipeline</a>
+      <span class="stack">opencv &middot; pytorch &middot; open3d &middot; ros</span>
+      <span class="note"> &mdash; dense point cloud, pose graph SLAM, optical flow, GrabCut</span>
+    </span>
+  </li>
+  <li>
+    <span>
+      UAV Surveillance Simulation
+      <span class="stack">ros &middot; gazebo &middot; mpc</span>
+      <span class="note"> &mdash; Pelican Quadrotor under 15&thinsp;m/s gusts; &lt;10% global tracking error</span>
+    </span>
+  </li>
+  <li>
+    <span>
+      OCR-Free LLM Table Extractor
+      <span class="stack">claude-3.5 &middot; llama-2 &middot; cot-prompting</span>
+      <span class="note"> &mdash; 98% accuracy on financial tables without OCR</span>
+    </span>
+  </li>
+</ol>
+
+<details>
+  <summary>older &amp; refurbished work</summary>
+  <ol>
+    <li><span><span class="note">add college projects here as you restore them</span></span></li>
+  </ol>
+</details>
+
+<p style="font-size:11px; color:#3a3830; margin-top:8px; padding-left:32px">
+  more on <a href="https://github.com/" target="_blank" style="color:#4e4840; border-bottom-color:transparent">GitHub</a>
+</p>
+
+
+<!-- UNIVERSITY -->
+<h2>University</h2>
+<ol>
+  <li>
+    <span>
+      <span class="hi">IIIT Hyderabad</span>
+      <span class="note"> &mdash; BTech (Hons) + MS by Research, Electronics &amp; Communication, Robotics Research Center. 2025.</span>
+      MS GPA 10.0 &nbsp;&middot;&nbsp; BTech GPA 8.35 &nbsp;&middot;&nbsp; 3&times; Dean&rsquo;s List.
+    </span>
+  </li>
+</ol>
+
+
+<!-- CREATIVE -->
+<h2>Creative</h2>
+<ul>
+  <li>
+    <span>
+      <a href="https://www.instagram.com/ther_eisnoi/" target="_blank">Abstract paintings</a>
+      <span class="note"> &mdash; Instagram &middot; canvas works on perception, duality, the dissolving self</span>
+    </span>
+  </li>
+  <li>
+    <span>
+      <a href="https://www.artpal.com/thereIsNoI" target="_blank">Original works</a>
+      <span class="note"> &mdash; ArtPal &middot; available</span>
+    </span>
+  </li>
+  <li>
+    <span>
+      <a href="https://fineartamerica.com/profiles/thereisnoi" target="_blank">Prints</a>
+      <span class="note"> &mdash; Fine Art America</span>
+    </span>
+  </li>
+  <li>
+    <span>
+      <a href="https://medium.com/@thereisnoi" target="_blank">Poetry &amp; prose</a>
+      <span class="note"> &mdash; Medium &middot; consciousness, imperfection, the formless</span>
+    </span>
+  </li>
+  <li>
+    <span>
+      Music
+      <span class="note"> &mdash; signal in noise</span>
+    </span>
+  </li>
+  <li>
+    <span>
+      Chess
+      <span class="note"> &mdash; 80+ day streak on chess.com &middot; aspiring GM</span>
+    </span>
+  </li>
+</ul>
+
+<!--
+<h2>Interests</h2>
+<ul>
+  <li><span>Chess <span class="note"> - 80+ day streak on chess.com - aspiring GM - want to write about it</span></span></li>
+  <li><span>Real estate &amp; agro industry <span class="note"> - learning fundamentals, thinking about ML applications</span></span></li>
+  <li><span>Cosmology, philosophy of mind, and most things</span></li>
+</ul>
+-->
+
+
+<!-- CONTACT -->
+<div class="footer">
+  <a href="mailto:shivanirao.chepuri21@gmail.com">shivanirao.chepuri21@gmail.com</a>
+  <span class="sep">&middot;</span>
+  <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+  <span class="sep">&middot;</span>
+  <a href="https://github.com" target="_blank">GitHub</a>
+  <span class="sep">&middot;</span>
+  +91&thinsp;6304&thinsp;291864
+  <span class="sep">&middot;</span>
+  Hyderabad
+</div>
+
+</body>
+</html>
